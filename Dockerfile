@@ -25,4 +25,6 @@ ENV RAILS_ENV=production
 
 RUN bundle exec rake assets:precompile
 
+VOLUME /usr/src/app/public
+
 CMD ["rails", "server", "-b", "0.0.0.0"]
