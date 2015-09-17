@@ -3,7 +3,7 @@
 Devise.setup do |config|
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in DeviseMailer.
-  config.mailer_sender = 'sender@dummyapp.org'
+  config.mailer_sender = ENV['SMTP_SENDER'] || 'sender@dummyapp.org'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = "Locomotive::DeviseMailer"

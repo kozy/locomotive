@@ -37,3 +37,6 @@ group :development do
 end
 
 gem 'locomotivecms', '~> 3.0.0.pre.beta.1',  git: 'git://github.com/locomotivecms/engine', tag: 'v3.0.0.pre.beta.1'
+
+# 12-factorizing Rails to behave correct in container environment
+gem 'rails_12factor'
