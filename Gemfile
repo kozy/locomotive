@@ -36,7 +36,7 @@ group :development do
   gem 'spring'
 end
 
-gem 'locomotivecms', '~> 3.0.0.pre.beta.1',  git: 'git://github.com/locomotivecms/engine', tag: 'v3.0.0.pre.beta.1'
+gem 'locomotivecms', '~> 3.0.0.rc1',  git: 'git://github.com/locomotivecms/engine', tag: 'v3.0.0.rc1'
 
 # 12-factorizing Rails to behave correct in container environment
 gem 'rails_12factor', group: :production
