@@ -3,7 +3,10 @@ FROM rails:4.2.4
 MAINTAINER Julian Kaffke - julian@42nerds.com
 
 # Install imagemagick
-RUN apt-get update && apt-get install -y imagemagick libmagickwand-dev --no-install-recommends && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && \
+    apt-get install -y imagemagick libmagickwand-dev --no-install-recommends && \
+    rm -rf /var/lib/apt/lists/* && \
+    apt-get clean
 
 # throw errors if Gemfile has been modified since Gemfile.lock
 RUN bundle config --global frozen 1
@@ -16,8 +19,6 @@ COPY Gemfile.lock /usr/src/app/
 RUN bundle install
 
 COPY . /usr/src/app
-
-# RUN apt-get update && apt-get install -y nodejs --no-install-recommends && rm -rf /var/lib/apt/lists/*
 
 EXPOSE 3000
 
