@@ -28,7 +28,7 @@ Locomotive.configure do |config|
 
   # Uncomment this line to force Locomotive to redirect all requests in the
   # back-office to https in production.
-  # config.enable_admin_ssl = Rails.env.production?
+  config.enable_admin_ssl = Rails.env.production?
 
   # Configure the e-mail address which will be shown in the DeviseMailer, NotificationMailer, ...etc
   # if you do not put the domain name in the email, Locomotive will take the default domain name depending
@@ -43,12 +43,15 @@ Locomotive.configure do |config|
   #
   # config.theme_assets_checksum = true
 
+  # Enable csrf protection as stated: http://doc.locomotivecms.com/references/api/tags/csrf-param
+  config.csrf_protection = true
+
   # Rack-cache settings, mainly used for the inline resizing image module. Default options:
-  # config.rack_cache = {
-  #   verbose:     true,
-  #   metastore:   URI.encode("file:#{Rails.root}/tmp/dragonfly/cache/meta"), # URI encoded in case of spaces
-  #   entitystore: URI.encode("file:#{Rails.root}/tmp/dragonfly/cache/body")
-  # }
+  config.rack_cache = {
+    verbose:     true,
+    metastore:   URI.encode("file:#{Rails.root}/tmp/dragonfly/cache/meta"), # URI encoded in case of spaces
+    entitystore: URI.encode("file:#{Rails.root}/tmp/dragonfly/cache/body")
+  }
   # If you do want to disable it for good, just use the following syntax
   # config.rack_cache = false
   #
